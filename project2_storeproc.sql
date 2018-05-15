@@ -19,16 +19,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- TRIGGERS for Database 'PharmacyDB'
+-- Stored Procedure for Database 'PharmacyDB'
 --
 
 
---trigger on drug table, restricting the input of drug cost > 0
-CREATE TRIGGER `drugtri` AFTER UPDATE ON `drug`
- FOR EACH ROW BEGIN
-IF NEW.cost <= 0 THEN
-    UPDATE roles SET cost = OLD.cost WHERE cost = NEW.cost;
-    END IF;
-  END
+--PROCEDURE STARTS HERE;;;
+CREATE PROCEDURE simpleproc ()
+BEGIN
+	--put all Java queries code here, and change the syntax to pure SQL format.
+END//
 
 
