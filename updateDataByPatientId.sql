@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE PROCEDURE updateDataByPatientId(@patient_id int, @prescription_id int, @drug_id int, @company_id int, @id int, @first_name char(20), @last_name char(20), @phone.number int)
 
+
 Begin
 /*
 UPDATE [Prescription] SET [id] = @prescription_id WHERE [id]=@id 
@@ -40,6 +41,7 @@ UPDATE [Drug] SET [id]= @drug_id WHERE  [id] = @drug_id
 
 UPDATE [Drug_company] SET ［id] =company_id WHERE  [id] = @company_id
 */
+
 
 UPDATE prescription
 AS psp
