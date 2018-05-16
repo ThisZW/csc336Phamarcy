@@ -52,6 +52,31 @@ public class Queries {
     }
     
     public void insertDataIntoDatabase(){
+        
+        
+        /*
+        String query = "{ call <name_store_proc> }";
+        ResultSet rs;
+        
+        try (Connection conn = MySQLJDBCUtil.getConnection();
+             CallableStatement stmt = conn.prepareCall(query)) {
+            );
+            
+         //you know where you should put at.
+         rs = stmt.executeQuery();
+         while (rs.next()) {
+         System.out.println(String.format("%s - %s",
+         rs.getString("first_name") + " "
+         + rs.getString("last_name"),
+         rs.getString("skill")));
+         }
+         
+        }
+        catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        */
+        
     	try{
     		//Let's now only input a address string with 3 commas, no space around commas.
     		String[] address_arr = p.getAddress().split(",");
