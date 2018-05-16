@@ -55,22 +55,20 @@ public class Queries {
         
         
         /*
-        String query = "{ call <name_store_proc> }";
+        String query = "{ call <insertDataIntoDatabase> }";
         ResultSet rs;
         
         try (Connection conn = MySQLJDBCUtil.getConnection();
              CallableStatement stmt = conn.prepareCall(query)) {
             );
-            
-         //you know where you should put at.
-         rs = stmt.executeQuery();
-         while (rs.next()) {
-         System.out.println(String.format("%s - %s",
-         rs.getString("first_name") + " "
-         + rs.getString("last_name"),
-         rs.getString("skill")));
-         }
+    
          
+    }
+    catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+    }
+    */
+    
         }
         catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -153,6 +151,32 @@ public class Queries {
     }
     
     public ResultSet browseAllDataFromDatabase(){
+
+
+
+/*
+ String query = "{ call <browseDataIntoDatabase> }";
+ ResultSet rs;
+ 
+ try (Connection conn = MySQLJDBCUtil.getConnection();
+ CallableStatement stmt = conn.prepareCall(query)) {
+ );
+ 
+ rs = stmt.executeQuery();
+ while (rs.next()) {
+ System.out.println(String.format("%s - %s",
+ rs.getString("first_name") + " "
+ + rs.getString("last_name"),
+ rs.getString("skill")));
+ }
+ }
+ catch (SQLException ex) {
+ System.out.println(ex.getMessage());
+ }
+ */
+
+
+
     	try{
     		PreparedStatement browse = connection.prepareStatement(""
     				+ "SELECT p.id, p.first_name, p.last_name, p.phone_number, "
@@ -180,6 +204,23 @@ public class Queries {
     }
     
     public void deleteDataByPatientId(int id){
+
+
+
+/*
+ String query = "{ call <deleteDataIntoDatabase> }";
+ ResultSet rs;
+ 
+ try (Connection conn = MySQLJDBCUtil.getConnection();
+ CallableStatement stmt = conn.prepareCall(query)) {
+ );
+ 
+ }
+ catch (SQLException ex) {
+ System.out.println(ex.getMessage());
+ }
+ */
+
     	try{
     		PreparedStatement delete = connection.prepareStatement(""
     				+ "DELETE p,pi,psp,d,dc FROM `prescription` as psp "
@@ -199,6 +240,23 @@ public class Queries {
     }
     
     public void updateDataByPatientId(){
+
+
+
+/*
+String query = "{ call <updateDataByPatientId> }";
+ResultSet rs;
+
+try (Connection conn = MySQLJDBCUtil.getConnection();
+CallableStatement stmt = conn.prepareCall(query)) {
+);
+
+}
+catch (SQLException ex) {
+System.out.println(ex.getMessage());
+}
+*/
+
     	try{
     		PreparedStatement update = connection.prepareStatement(""
     				+ "update `prescription` as psp "
@@ -256,8 +314,4 @@ public class Queries {
         }
     }
     
-    public void insertData(){
-    	//this.connection.prepareStatement("");
-    	
-    }
 }
